@@ -76,6 +76,28 @@
   .status{margin-top:10px;font-size:13px;line-height:1.35}
   .status.ok{color:rgba(17,17,17,0.85)}
   .status.err{color:#8b0000}
+
+  /* ✅ Mobile stacking: input ABOVE button (MATCHES your stacked code) */
+  @media (max-width: 900px){
+    .wrap{
+      display:block;
+      width:100%;
+      box-sizing:border-box;
+    }
+
+    form{
+      flex-direction:column;     /* stack vertically */
+      align-items:stretch;       /* full width children */
+      gap:12px;
+      width:100%;
+    }
+
+    input[type="email"],
+    button{
+      width:100%;
+      min-width:0;               /* overrides button min-width:220px */
+    }
+  }
 </style>
 </head>
 
