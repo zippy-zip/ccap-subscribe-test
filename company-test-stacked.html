@@ -106,7 +106,7 @@
     <!-- IMPORTANT: action is # so the browser can never navigate to Apps Script -->
     <form id="newsletterForm" action="#" method="POST" novalidate>
       <input id="email" type="email" name="email" placeholder="Enter your email" autocomplete="email" required />
-      <button id="submitBtn" type="submit">Subscribe to Newsletter</button>
+      <button id="submitBtn" type="submit">Join the Waitlist</button>
     </form>
 
     <div id="status" class="status" aria-live="polite"></div>
@@ -121,7 +121,7 @@
   const emailInput = document.getElementById('email');
   const statusEl = document.getElementById('status');
 
-  const DEFAULT_BTN_TEXT = 'Subscribe to Newsletter';
+  const DEFAULT_BTN_TEXT = 'Join the Waitlist';
 
   function setStatus(msg, kind) {
     statusEl.textContent = msg || '';
@@ -156,8 +156,8 @@
         body: data,
       });
 
-      btn.textContent = 'Subscribed ✓';
-      setStatus('Thanks! You’re subscribed.', 'ok');
+      btn.textContent = 'Joined ✓';
+      setStatus('You’re on the waitlist!', 'ok');
       emailInput.value = '';
 
       setTimeout(() => {
